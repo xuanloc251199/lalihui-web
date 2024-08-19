@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Quy tắc chuyển hướng để bỏ .php trong URL
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)$ $1.php [L]
+
+RewriteRule ^product/([a-zA-Z0-9_-]+)$ product.php?slug=$1 [L]
